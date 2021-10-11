@@ -12,7 +12,7 @@ rule index:
 
 rule minimap2: # snakemake wrappers for minimap2
     input:
-        target="data/ecoli_k12_mg1655.fasta", # can be either genome index or genome fasta
+        target="data/hg38.fa", # can be either genome index or genome fasta
         query=["{sample}.fastq"]
     output:
         "nanopolish_results/mapped/{sample}.bam"
@@ -44,7 +44,7 @@ rule call_methylation:
     input:
         bam="nanopolish_results/mapped/{sample}.sorted.bam",
         bai="nanopolish_results/mapped/{sample}.sorted.bam.bai",
-        fa="data/ecoli_k12_mg1655.fasta",
+        fa="data/hg38.fa",
         fq="{sample}.fastq",
         index="{sample}.fastq.index",
         fai="{sample}.fastq.index.fai",
