@@ -1,4 +1,5 @@
-This is a local fork of the meteore pipeline. I forked it to have a fix version to use.
+*** This is a local fork of the meteore pipeline. I forked it to have a fix version to use and play around with. ***
+
 
 ![Analysis pipeline](https://github.com/comprna/METEORE/blob/master/figure/meteore_logo_white.png)
 # METEORE: MEthylation deTEction with nanopORE sequencing                                         :stars:
