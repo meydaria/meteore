@@ -32,7 +32,7 @@ df_unm <- plyr::count(df[df$Log.like.ratio < 0, ], c("Chr", "Pos","Strand"))
 colnames(df_m)[4] <- "Num.methylated"
 colnames(df_unm)[4] <- "Num.unmethylated"
 df_1 <- full_join(df_m, df_unm, by = c("Chr", "Pos", "Strand"))
-# Replace NA with 0
+# Replace NA with 0  ## why doing this so late?? Isn't it better to replace the NAs before I calculating the coverage.
 df_1[is.na(df_1)] <- 0
 # Create a new column that gives a total no. of reads (coverage)
 df_1$df.cov <- df_1$Num.methylated + df_1$Num.unmethylated
