@@ -14,8 +14,8 @@
 #   -Combine information from both strands (chr, start, end, cov, methylation)
 
 library(data.table)
-library(dplyr)
 library(plyr)
+library(dplyr)
 
 args = commandArgs(trailingOnly=TRUE)
 
