@@ -1,14 +1,15 @@
 rule index:
     input:
         f5="data/{sample}",
-        fq="{sample}.fastq"
+        fq="{sample}.fastq",
+        fs="data/{sample}_sequencing_summary.txt"
     output:
         "{sample}.fastq.index",
         "{sample}.fastq.index.fai",
         "{sample}.fastq.index.gzi",
         "{sample}.fastq.index.readdb"
     shell:
-        "nanopolish index -d {input.f5} {input.fq}"
+        "nanopolish index -d {input.f5} -f {input.fs} {input.fq}"
 
 rule minimap2: # snakemake wrappers for minimap2
     input:
